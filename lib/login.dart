@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             // TODO: Add button bar (101)
-            const OverflowBar(
+            OverflowBar(
               alignment: MainAxisAlignment.end,
               // TODO: Add a beveled rectangular border to CANCEL (103)
               children: <Widget>[
