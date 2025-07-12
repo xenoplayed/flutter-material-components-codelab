@@ -30,6 +30,7 @@ class HomePage extends StatelessWidget {
         child: Text('You did it!'),
       ),
       // TODO: Set resizeToAvoidBottomInset (101)
+      resizeToAvoidBottomInset: false, // Doing this ensures that the keyboard's appearance does not alter the size of the home page or its widgets.
     );
   }
 }
