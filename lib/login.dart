@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
             // TODO: Remove filled: true values (103)
             // TODO: Add TextField widgets (101)
             // [Name]
-            TextField(
+            const TextField(
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             // [Spacer]
             const SizedBox(height: 120.0),
             // [Password]
-            TextField(
+            const TextField(
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Password',
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             // TODO: Add button bar (101)
-            OverflowBar(
+            const OverflowBar(
               alignment: MainAxisAlignment.end,
               // TODO: Add a beveled rectangular border to CANCEL (103)
               children: <Widget>[
