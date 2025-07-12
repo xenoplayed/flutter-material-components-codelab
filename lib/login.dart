@@ -45,7 +45,8 @@ class _LoginPageState extends State<LoginPage> {
             // TODO: Remove filled: true values (103)
             // TODO: Add TextField widgets (101)
             // [Name]
-            const TextField(
+            TextField(
+              controller: _usernameController,
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
@@ -54,7 +55,8 @@ class _LoginPageState extends State<LoginPage> {
             // [Spacer]
             const SizedBox(height: 120.0),
             // [Password]
-            const TextField(
+            TextField(
+              controller: _passwordController,
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Password',
@@ -71,6 +73,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text('CANCEL'),
                   onPressed: () {
                     // TODO: Clear the text fields (101)
+                    _usernameController.clear();
+                    _passwordController.clear();
                   },
                 ),
                 ElevatedButton(
