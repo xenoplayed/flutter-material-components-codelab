@@ -15,6 +15,7 @@
 import 'package:flutter/material.dart';
 
 import 'backdrop.dart';
+import 'category_menu_page.dart';
 import 'colors.dart';
 import 'home.dart';
 import 'login.dart';
@@ -48,14 +49,19 @@ class _ShrineAppState extends State<ShrineApp> {
         // TODO: Change to a Backdrop with a HomePage frontLayer (104)
         '/': (BuildContext context) => Backdrop(
               // TODO: Make currentCategory field take _currentCategory (104)
-              currentCategory: Category.all,
+              currentCategory: _currentCategory,
               // TODO: Pass _currentCategory for frontLayer (104)
-              frontLayer: HomePage(),
+              frontLayer: HomePage(category: _currentCategory),
+
               // TODO: Change backLayer field value to CategoryMenuPage (104)
-              backLayer: Container(color: kShrinePink100),
-              frontTitle: Text('SHRINE'),
-              backTitle: Text('MENU'),
+              backLayer: CategoryMenuPage(
+                currentCategory: _currentCategory,
+                onCategoryTap: _onCategoryTap,
+              ),
+              frontTitle: const Text('SHRINE'),
+              backTitle: const Text('MENU'),
             ),
+
         // TODO: Make currentCategory field take _currentCategory (104)
         // TODO: Pass _currentCategory for frontLayer (104)
         // TODO: Change backLayer field value to CategoryMenuPage (104)
