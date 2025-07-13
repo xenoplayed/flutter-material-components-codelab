@@ -56,6 +56,10 @@ ThemeData _buildShrineTheme() {
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: kShrinePink100,
     ),
+    // TODO: Decoarate Inputs (103)
+    inputDecorationTheme: const InputDecorationTheme(
+      border: OutlineInputBorder(),
+    ),
   );
 }
 
