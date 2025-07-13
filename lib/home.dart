@@ -27,50 +27,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: Return an AsymmetricView (104)
     // TODO: Pass Category variable to AsymmetricView (104)
-    return Scaffold(
-      // TODO: Add app bar (102)
-      appBar: AppBar(
-        // TODO: Add buttons and title (102)
-        title: const Text('SHRINE'),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.menu,
-            semanticLabel: 'menu',
-          ),
-          onPressed: () {
-            print('Menu button');
-          },
-        ),
-        // TODO: Add trailing button
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              semanticLabel: 'search',
-            ),
-            onPressed: () {
-              print('Search button');
-            },
-          ),
-          IconButton(
-            icon: const Icon(
-              Icons.tune,
-              semanticLabel: 'filter',
-            ),
-            onPressed: () {
-              print('Filter button');
-            },
-          )
-        ],
-      ),
-      // TODO: Add a grid view (102)
-      body: AsymmetricView(
-        products: ProductsRepository.loadProducts(Category.all),
-      ),
-
-      // TODO: Set resizeToAvoidBottomInset (101)
-      // Doing this ensures that the keyboard's appearance does not alter the size of the home page or its widgets.
-      resizeToAvoidBottomInset: false,
-    );
+    return AsymmetricView(
+        products: ProductsRepository.loadProducts(Category.all));
   }
 }
