@@ -80,7 +80,11 @@ class _LoginPageState extends State<LoginPage> {
                     _passwordController.clear();
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: kShrineBrown900, // forgroundColor was primary earlier
+                    foregroundColor:
+                        kShrineBrown900, // forgroundColor was primary earlier
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
                   ),
                 ),
                 ElevatedButton(
@@ -93,6 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                     foregroundColor: kShrineBrown900,
                     backgroundColor: kShrinePink100,
                     elevation: 8.0,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
                   ),
                 ),
               ],
