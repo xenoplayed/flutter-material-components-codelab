@@ -80,9 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                     _passwordController.clear();
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: Theme.of(context)
-                        .colorScheme
-                        .secondary, // forgroundColor was primary earlier
+                    foregroundColor: kShrineBrown900, // forgroundColor was primary earlier
                   ),
                 ),
                 ElevatedButton(
