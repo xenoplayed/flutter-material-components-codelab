@@ -59,6 +59,15 @@ ThemeData _buildShrineTheme() {
     // TODO: Decoarate Inputs (103)
     inputDecorationTheme: const InputDecorationTheme(
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          width: 2.0,
+          color: kShrineBrown900,
+        ),
+      ),
+      floatingLabelStyle: TextStyle(
+        color: kShrineBrown900,
+      ),
     ),
   );
 }

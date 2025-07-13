@@ -78,6 +78,11 @@ class _LoginPageState extends State<LoginPage> {
                     _usernameController.clear();
                     _passwordController.clear();
                   },
+                  style: TextButton.styleFrom(
+                    foregroundColor: Theme.of(context)
+                        .colorScheme
+                        .secondary, // forgroundColor was primary earlier
+                  ),
                 ),
                 ElevatedButton(
                   child: const Text('NEXT'),
