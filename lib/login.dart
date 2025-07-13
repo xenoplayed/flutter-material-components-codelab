@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             // [Spacer]
-            const SizedBox(height: 120.0),
+            const SizedBox(height: 12.0),
             // [Password]
             TextField(
               controller: _passwordController,
@@ -64,6 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             // TODO: Add button bar (101)
+            const SizedBox(height: 12.0),
             OverflowBar(
               alignment: MainAxisAlignment.end,
               // TODO: Add a beveled rectangular border to CANCEL (103)
