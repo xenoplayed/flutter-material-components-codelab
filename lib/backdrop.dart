@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'model/product.dart';
+import 'login.dart';
 
 // TODO: Add velocity constant (104)
 const double _kFlingVelocity = 2.0;
@@ -77,8 +78,8 @@ class _BackdropTitle extends AnimatedWidget {
     required this.onPress,
     required this.frontTitle,
     required this.backTitle,
-  }) : _listenable = listenable, 
-       super(key: key, listenable: listenable);
+  })  : _listenable = listenable,
+        super(key: key, listenable: listenable);
 
   final Animation<double> _listenable;
 
@@ -108,7 +109,8 @@ class _BackdropTitle extends AnimatedWidget {
                   end: const Offset(1.0, 0.0),
                 ).evaluate(animation),
                 child: const ImageIcon(AssetImage('assets/diamond.png')),
-              )]),
+              )
+            ]),
           ),
         ),
         // Here, we do a custom cross fade between backTitle and frontTitle.
@@ -238,13 +240,41 @@ class _BackdropState extends State<Backdrop>
       // TODO: Remove leading property (104)
       // TODO: Create title with _BackdropTitle parameter (104)
       // TODO: Replace leading menu icon with IconButton (104)
-      leading: IconButton(
-        icon: const Icon(Icons.menu),
-        onPressed: _toggleBackdropLayerVisibility,
+      title: _BackdropTitle(
+        listenable: _controller.view,
+        onPress: _toggleBackdropLayerVisibility,
+        frontTitle: widget.frontTitle,
+        backTitle: widget.backTitle,
       ),
-      title: Text('SHRINE'),
       actions: <Widget>[
         // TODO: Add shortcut to login screen from trailing icons (104)
+        IconButton(
+          icon: const Icon(
+            Icons.search,
+            semanticLabel: 'login', // New code
+          ),
+          onPressed: () {
+            // TODO: Add open login (104)
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+            );
+          },
+        ),
+        IconButton(
+          icon: const Icon(
+            Icons.tune,
+            semanticLabel: 'login', // New code
+          ),
+          onPressed: () {
+            // TODO: Add open login (104)
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+            );
+          },
+        ),
+
         IconButton(
           icon: Icon(
             Icons.search,
@@ -268,8 +298,9 @@ class _BackdropState extends State<Backdrop>
     return Scaffold(
       appBar: appBar,
       // TODO: Return a LayoutBuilder widget (104)
-      body: LayoutBuilder(builder: _buildStack),
+      body: LayoutBuilder(
+        builder: _buildStack,
+      ),
     );
   }
 }
-
